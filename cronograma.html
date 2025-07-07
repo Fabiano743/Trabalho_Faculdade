@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cronograma de Aulas</title>
+  <link rel="stylesheet" href="cronograma.css" />
+</head>
+<body>
+  <header>
+    <!-- Menu Hambúrguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="menu" class="menu">
+      <a href="home.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="cronograma.html" class="active">Cronograma</a>
+      <a href="cardapio.html">Cardápio</a>
+    </nav>
+
+    <!-- Título principal -->
+    <h1>Cronograma de Aulas</h1>
+  </header>
+
+  <main>
+    <section>
+      <!-- Texto introdutório acolhedor -->
+      <p>
+        Olá! Aqui está o cronograma com todas as aulas, atividades e provas da semana e do mês.  
+        Fique sempre de olho para não perder nada importante e se preparar com calma.
+      </p>
+
+      <!-- Tabela com o cronograma -->
+      <table class="tabela-cronograma">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Disciplina</th>
+            <th>Atividade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>17/06/2025</td>
+            <td>08:00 - 09:40</td>
+            <td>Matemática</td>
+            <td>Aula regular</td>
+          </tr>
+          <tr>
+            <td>17/06/2025</td>
+            <td>10:00 - 11:40</td>
+            <td>Português</td>
+            <td>Revisão para prova</td>
+          </tr>
+          <tr>
+            <td>18/06/2025</td>
+            <td>08:00 - 09:40</td>
+            <td>História</td>
+            <td>Aula regular</td>
+          </tr>
+          <tr>
+            <td>19/06/2025</td>
+            <td>10:00 - 11:40</td>
+            <td>Ciências</td>
+            <td>Prova bimestral</td>
+          </tr>
+          <tr>
+            <td>20/06/2025</td>
+            <td>08:00 - 09:40</td>
+            <td>Educação Física</td>
+            <td>Apresentação de trabalho</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Rodapé com direitos autorais -->
+    <p>© 2025 Site dos Alunos - Todos os direitos reservados</p>
+  </footer>
+  <script>
+    // Seleciona o botão do menu e o menu para controlar a exibição no mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    // Adiciona evento de clique para mostrar ou esconder o menu
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
+

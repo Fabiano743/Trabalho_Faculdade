@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Acadêmico</title>
+
+  <!-- Link para o arquivo CSS externo -->
+  <link rel="stylesheet" href="teste.css" />
+</head>
+<body>
+  <header>
+    <!-- Menu Hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu" class="menu">
+      <a href="home.html" class="active">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="cronograma.html">Cronograma</a>
+      <a href="cardapio.html">Cardápio</a>
+    </nav>
+
+    <h1>Bem-vindo ao Portal dos Alunos</h1>
+  </header>
+
+  <main>
+    <!-- Carrossel de imagens -->
+    <div class="carousel">
+      <img src="img/img1.jpg" alt="Imagem 1" class="carousel-image active" />
+      <img src="img/img2.jpg" alt="Imagem 2" class="carousel-image" />
+      <img src="img/img3.jpg" alt="Imagem 3" class="carousel-image" />
+    </div>
+
+    <!-- Conteúdo principal da página inicial -->
+    <section id="home">
+      <h2>Início</h2>
+
+      <p><strong>Bem‑vindo ao Portal Acadêmico!</strong></p>
+
+      <p>
+        Este site foi criado especialmente para você, aluno, que busca praticidade,
+        organização e acesso rápido às principais informações do seu cotidiano escolar.
+        Aqui, reunimos tudo o que você precisa para se manter informado e preparado para suas atividades.
+      </p>
+
+      <p>
+        Logo na página inicial, você encontrará o <strong>cronograma de aulas da semana</strong> e o
+        <strong>planejamento mensal</strong>, permitindo que você saiba exatamente o que será
+        abordado em cada dia e se antecipe para os próximos conteúdos. Além disso, o
+        <strong>calendário de atividades e provas</strong> está sempre atualizado para que você
+        não perca nenhuma data importante.
+      </p>
+
+      <p>
+        Após cada aula, os <strong>materiais utilizados pelos professores</strong> estarão disponíveis
+        para consulta ou download. Isso facilita revisões, ajuda a tirar dúvidas e garante que ninguém fique para trás.
+      </p>
+
+      <p>
+        Outro recurso muito útil é o <strong>cardápio semanal da instituição</strong>, onde você poderá
+        visualizar com antecedência as refeições servidas, ajudando no planejamento da sua alimentação,
+        especialmente para quem tem restrições ou preferências.
+      </p>
+
+      <p>
+        E para garantir que você esteja sempre por dentro de tudo, o portal conta com um sistema de
+        <strong>lembretes importantes</strong> — avisando sobre prazos de entrega, eventos especiais,
+        reuniões e qualquer outra novidade relevante.
+      </p>
+
+      <p>
+        Este é mais do que um site: é uma ferramenta pensada para tornar a sua vida acadêmica mais leve,
+        organizada e eficiente. Explore as seções, mantenha-se atualizado e aproveite tudo o que o portal tem a oferecer!
+      </p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Portal Acadêmico. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para saudação personalizada -->
+  <script>
+    // Verifica se o usuário já viu a mensagem de boas-vindas
+    if (!localStorage.getItem("bemVindoMostrado")) {
+
+      // Pede o nome do aluno de forma simpática
+      let nome = prompt("Olá! Seja bem-vindo ao Portal Acadêmico 😊\nQual é o seu nome?");
+
+      // Se o aluno escreveu um nome válido, mostramos mensagem personalizada
+      if (nome && nome.trim() !== "") {
+        alert("Que bom ter você aqui, " + nome.trim() + "! Aproveite o portal e bons estudos! 📚");
+      } else {
+        // Se ele não escreveu nada, mostramos uma mensagem genérica
+        alert("Bem-vindo ao Portal Acadêmico! Aproveite todos os recursos disponíveis! 🚀");
+      }
+
+      // Marca que a mensagem já foi exibida, para não mostrar de novo
+      localStorage.setItem("bemVindoMostrado", "true");
+    }
+  </script>
+
+  <!-- Script do carrossel de imagens automático -->
+  <script>
+    // Seleciona todas as imagens do carrossel
+    const images = document.querySelectorAll('.carousel-image');
+
+    // Índice da imagem atual
+    let currentImageIndex = 0;
+
+    // Função que troca para a próxima imagem
+    function showNextImage() {
+      // Esconde a imagem atual
+      images[currentImageIndex].classList.remove('active');
+
+      // Vai para a próxima (volta para a primeira se chegar no fim)
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+
+      // Mostra a nova imagem
+      images[currentImageIndex].classList.add('active');
+    }
+
+    // Troca a imagem a cada 3 segundos
+    setInterval(showNextImage, 3000);
+  </script>
+  <script>
+    // Seleciona o botão do menu e o menu para controlar a exibição no mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    // Adiciona evento de clique para mostrar ou esconder o menu
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>

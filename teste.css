@@ -1,0 +1,145 @@
+/* Reset básico e fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo do corpo da página */
+body {
+  background-color: #c3d8ff;
+  color: #333;
+}
+
+/* Cabeçalho azul com texto centralizado */
+header {
+  background-color: #007bff;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Navegação (menu) escondida por padrão no mobile */
+nav.menu {
+  background-color: #0056b3;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* fica abaixo do header */
+  width: 100%;
+  left: 0;
+  top: 60px;
+  z-index: 1000; /* para ficar sobre outros elementos */
+}
+
+/* Classe que mostra o menu quando ativado */
+nav.menu.show {
+  display: flex;
+}
+
+/* Links do menu: texto branco, centralizado, espaçamento e efeito hover */
+nav.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #007bff;
+}
+/* Destaque ao passar o mouse ou ao estar ativo */
+nav.menu a:hover,
+nav.menu a.active {
+  background-color: #00408a;
+}
+
+/* Estilo para telas maiores: menu sempre visível e horizontal */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* esconde o hambúrguer no desktop */
+  }
+  nav.menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    position: static;
+    width: auto;
+    background-color: transparent;
+  }
+  nav.menu a {
+    border-top: none;
+    width: auto;
+    padding: 10px 15px;
+  }
+  nav.menu a:hover {
+    background-color: #00408a;
+  }
+}
+
+/* Container principal do conteúdo */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #c5dffd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização do carrossel de imagens */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-image {
+  width: 100%;
+  display: none; /* Esconde todas as imagens por padrão */
+}
+
+.carousel-image.active {
+  display: block; /* Mostra apenas a imagem ativa */
+}
+
+/* Ícone do menu hambúrguer - só aparece no mobile */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 1100;
+}
+
+/* Linhas do hambúrguer brancas e arredondadas */
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Esconder hambúrguer no desktop */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Rodapé com fundo azul e texto branco */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 40px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre Mim - Site dos Alunos</title>
+  <link rel="stylesheet" href="sobre.css" />
+</head>
+<body>
+  <header>
+    <!-- Menu Hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu" class="menu">
+      <a href="home.html">Home</a>
+      <a href="sobre.html" class="active">Sobre</a>
+      <a href="cronograma.html">Cronograma</a>
+      <a href="cardapio.html">Cardápio</a>
+    </nav>
+    <h1>Sobre Mim</h1>
+  </header>
+
+  <main>
+    <section class="sobre-container">
+      <img src="img/fotop.jpg" alt="Foto de Fabiano" class="foto-perfil" />
+      <div>
+        <h2>Sobre Mim</h2>
+        <p>
+          Oi! Eu sou o Fabiano, tenho 20 anos e nasci em Ubatuba-SP. Hoje moro em Sumaré e trabalho como estagiário na Honda, onde venho aprendendo muito e crescendo a cada dia. Além disso, estudo Análise e Desenvolvimento de Sistemas na Uninter, porque a tecnologia sempre foi uma paixão minha desde criança.
+        </p>
+        <p>
+          Meu sonho é atuar na área de projetos de sistemas, sempre buscando aprender mais e melhorar minhas habilidades. Acho que a vida é um aprendizado constante, e cada experiência, por menor que seja, faz a gente crescer — tanto na vida pessoal quanto na profissional.
+        </p>
+        <p>
+          Fora do mundo da tecnologia, gosto muito de me movimentar. Sou fã de esportes como tênis de mesa, vôlei, futebol, e até curto alguns jogos de cartas para relaxar e me divertir com os amigos.
+        </p>
+        <p>
+          Estou sempre aberto a novos desafios e oportunidades que possam me ajudar a evoluir e realizar meus sonhos. Acho que o segredo está em nunca parar de buscar o melhor para si mesmo.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Site dos Alunos - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Seleciona o botão do menu e o menu para controlar a exibição no mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    // Adiciona evento de clique para mostrar ou esconder o menu
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* Zera margens, preenchimentos e define box-sizing para facilitar o layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Define fundo azul claro para a página e cor do texto padrão */
+body {
+  background-color: #c3d8ff;
+  color: #333;
+}
+
+/* Estilo do cabeçalho: fundo azul forte, texto branco e centralizado */
+header {
+  background-color: #007bff;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  position: relative; /* necessário para posicionar elementos filhos */
+}
+
+/* Menu de navegação: fundo azul escuro, escondido por padrão (mobile) */
+nav.menu {
+  background-color: #0056b3;
+  display: none; /* escondido até ativar o menu hambúrguer */
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* fica posicionado abaixo do header */
+  width: 100%;
+  left: 0;
+  top: 60px; /* espaço abaixo do header */
+  z-index: 1000; /* fica acima de outros elementos */
+}
+
+/* Classe que mostra o menu quando ativado (ex: clicando no hambúrguer) */
+nav.menu.show {
+  display: flex;
+}
+
+/* Estilo dos links do menu: texto branco, negrito, espaçamento e borda superior */
+nav.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #007bff;
+}
+
+/* Efeito hover e link ativo: fundo azul mais escuro */
+nav.menu a:hover,
+nav.menu a.active {
+  background-color: #00408a;
+}
+
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 768px) {
+  /* Esconde o botão do menu hambúrguer no desktop */
+  .menu-toggle {
+    display: none;
+  }
+  /* Menu fica sempre visível e em linha */
+  nav.menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    position: static;
+    width: auto;
+    background-color: transparent;
+  }
+  /* Ajusta links para layout horizontal, sem borda superior */
+  nav.menu a {
+    border-top: none;
+    width: auto;
+    padding: 10px 15px;
+  }
+  /* Efeito hover mantém fundo azul escuro */
+  nav.menu a:hover {
+    background-color: #00408a;
+  }
+}
+
+/* Área principal do conteúdo: largura limitada, margem centralizada, fundo azul claro, cantos arredondados e sombra */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #c5dffd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da tabela do cronograma: ocupa toda largura e com margem superior */
+.tabela-cronograma {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse; /* remove espaços entre bordas das células */
+}
+
+/* Cabeçalho da tabela: fundo azul e texto branco */
+.tabela-cronograma thead {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Células da tabela: espaçamento interno, borda cinza clara e texto alinhado à esquerda */
+.tabela-cronograma th,
+.tabela-cronograma td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Linhas pares da tabela com fundo cinza claro para facilitar a leitura */
+.tabela-cronograma tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 1100;
+}
+
+/* Linhas do hambúrguer brancas e arredondadas */
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Esconder hambúrguer no desktop */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Rodapé com fundo azul e texto branco */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 40px;
+}

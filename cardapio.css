@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* fonte padrão para o site */
+}
+
+/* Estilo do corpo da página: fundo azul claro e texto escuro para boa leitura */
+body {
+  background-color: #c3d8ff;
+  color: #333;
+}
+
+/* Cabeçalhocentralizado */
+header {
+  background-color: #007bff;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+/* Estilo do menu no modo mobile (escondido por padrão) */
+nav.menu {
+  background-color: #0056b3;
+  display: none; 
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 60px; 
+  z-index: 1000; 
+}
+
+/* Quando o menu estiver ativado ele aparece */
+nav.menu.show {
+  display: flex;
+}
+
+/* Links do menu: letras brancas, centralizadas e com destaque ao passar o mouse */
+nav.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #007bff;
+}
+
+/* Destaque para link ativo ou quando o mouse passa por cima */
+nav.menu a:hover,
+nav.menu a.active {
+  background-color: #00408a;
+}
+
+/* Estilos para telas maiores (desktop) */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; 
+  }
+
+  nav.menu {
+    display: flex !important; /* menu visível no desktop */
+    flex-direction: row; /* itens lado a lado */
+    justify-content: center;
+    position: static;
+    width: auto;
+    background-color: transparent;
+  }
+
+  nav.menu a {
+    border-top: none;
+    width: auto;
+    padding: 10px 15px;
+  }
+
+  nav.menu a:hover {
+    background-color: #00408a;
+  }
+}
+
+/* Área principal do conteúdo com largura centralizada e aparência leve */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #c5dffd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.tabela-cardapio {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse; 
+}
+
+/* Cabeçalho da tabela: azul com texto branco */
+.tabela-cardapio thead {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Células da tabela com padding e borda fina */
+.tabela-cardapio th,
+.tabela-cardapio td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Linhas pares da tabela com fundo cinza claro para facilitar a leitura */
+.tabela-cardapio tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+/* Estilo do botão hambúrguer que aparece no mobile */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  z-index: 1100; /* acima do menu */
+}
+
+/* Linhas brancas que formam o ícone do menu hambúrguer */
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Esconde o botão do menu no desktop */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Rodapé com fundo azul e texto centralizado em branco */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 40px;
+}

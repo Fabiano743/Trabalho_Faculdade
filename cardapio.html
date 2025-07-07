@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio da Semana</title>
+  <!-- Link para o arquivo CSS que estiliza a página -->
+  <link rel="stylesheet" href="cardapio.css" />
+</head>
+<body>
+  <header>
+    <!-- Ícone do menu hambúrguer para navegação em dispositivos móveis -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Menu principal com links para outras páginas -->
+    <nav id="menu" class="menu">
+      <a href="home.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="cronograma.html">Cronograma</a>
+      <!-- Link ativo que indica a página atual -->
+      <a href="cardapio.html" class="active">Cardápio</a>
+    </nav>
+
+    <!-- Título principal da página -->
+    <h1>Cardápio da Semana</h1>
+  </header>
+
+  <main>
+    <section>
+      <!-- Texto introdutório sobre o cardápio -->
+      <p>
+        Aqui está o cardápio semanal da cantina da escola. As refeições são preparadas com carinho para garantir uma alimentação saudável e saborosa para todos os alunos.
+      </p>
+
+      <!-- Tabela que exibe o cardápio organizado por dia, prato principal, acompanhamentos e sobremesa -->
+      <table class="tabela-cardapio">
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Prato Principal</th>
+            <th>Acompanhamentos</th>
+            <th>Sobremesa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Segunda</td>
+            <td>Arroz, Feijão e Frango Grelhado</td>
+            <td>Salada de alface e tomate</td>
+            <td>Banana</td>
+          </tr>
+          <tr>
+            <td>Terça</td>
+            <td>Macarronada com carne moída</td>
+            <td>Pão de alho</td>
+            <td>Maçã</td>
+          </tr>
+          <tr>
+            <td>Quarta</td>
+            <td>Arroz, Lentilha e Bife</td>
+            <td>Legumes cozidos</td>
+            <td>Melancia</td>
+          </tr>
+          <tr>
+            <td>Quinta</td>
+            <td>Escondidinho de carne</td>
+            <td>Arroz e salada verde</td>
+            <td>Laranja</td>
+          </tr>
+          <tr>
+            <td>Sexta</td>
+            <td>Feijoada</td>
+            <td>Couve refogada e arroz</td>
+            <td>Gelatina</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Rodapé com direitos autorais -->
+    <p>© 2025 Site dos Alunos - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Seleciona o botão do menu e o menu para controlar a exibição no mobile
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    // Adiciona evento de clique para mostrar ou esconder o menu
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
+
